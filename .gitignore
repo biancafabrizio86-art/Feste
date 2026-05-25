@@ -35,7 +35,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/src/generated/prisma
+# /src/generated/prisma  ← committed for Vercel compatibility
 
 # SQLite database (committed separately via seed)
 dev.db
