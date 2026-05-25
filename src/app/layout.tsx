@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import Navbar from "@/components/Navbar";
@@ -6,6 +6,22 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
   title: "FestAffitto — Noleggio e Vendita Attrezzature per Feste",
   description: "Il marketplace italiano per affittare o comprare attrezzature per eventi: tende, tavoli, sedie, audio, luci e molto altro.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "FestAffitto",
+  },
+  icons: {
+    apple: "/icons/icon-180.svg",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f97316",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
