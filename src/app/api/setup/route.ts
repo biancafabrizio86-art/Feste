@@ -8,7 +8,8 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: "Chiave non valida" }, { status: 401 });
   }
 
-  const sql = neon(process.env.DATABASE_URL!);
+  const dbUrl = process.env.DATABASE_URL!.replace(/[&?]channel_binding=[^&]*/g, "");
+  const sql = neon(dbUrl);
 
   await sql`DROP TABLE IF EXISTS "Order" CASCADE`;
   await sql`DROP TABLE IF EXISTS "Product" CASCADE`;
