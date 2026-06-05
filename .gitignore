@@ -41,3 +41,10 @@ next-env.d.ts
 dev.db
 dev.db-shm
 dev.db-wal
+
+# NotebookLM auth — never commit session tokens / cookies
+storage_state.json
+**/storage_state.json
+.notebooklm/
+notebooklm-token*.json
+NOTEBOOKLM_AUTH_JSON*
